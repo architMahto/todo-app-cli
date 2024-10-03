@@ -29,6 +29,8 @@ CommandHandlerMap = {
 
 
 def handle_exceptions(func):
+    """This method handles all exceptions for a command"""
+
     def wrapper(*args, **kwargs):
         try:
             command_name = args[0]
@@ -48,6 +50,7 @@ def handle_exceptions(func):
 
 
 def parse_user_command():
+    """This method parses and returns necessary information for a command"""
     user_command = input("Type add, show, edit, complete or exit: ").strip()
     command_name, *command_arg = user_command.split(" ", 1)
     command_arg = command_arg[0] if command_arg else ""
@@ -56,6 +59,7 @@ def parse_user_command():
 
 @handle_exceptions
 def execute_user_command(command_name, command_arg):
+    """This method executes a command"""
     command_handler = CommandHandlerMap[command_name]
     if command_handler["reqArgs"]:
         command_handler["handlerFn"](command_arg)

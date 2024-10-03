@@ -1,7 +1,11 @@
+"""This module contains the FileIoClient class"""
+
 import os
 
 
 class FileIoClient:
+    """This class handles read and write operations to the todo file"""
+
     def __init__(self, filename):
         self.filename = filename
         if not os.path.isfile(self.filename):
@@ -22,16 +26,19 @@ class FileIoClient:
             raise IndexError("Please enter a valid todo number")
 
     def get_data(self):
+        """This method returns all the entries that are stored in the file"""
         with open(self.filename, "r", encoding="utf-8") as file:
             return self.__read_sanitized_data(file)
 
     def add_entry(self, entry):
+        """This method adds an entry to the file"""
         with open(self.filename, "r+", encoding="utf-8") as file:
             sanitized_data = self.__read_sanitized_data(file)
             sanitized_data.append(entry)
             self.__write_data(file, sanitized_data)
 
     def edit_entry(self, entry_index, updated_entry_value):
+        """This method edits an entry that is stored in the file"""
         with open(self.filename, "r+", encoding="utf-8") as file:
             sanitized_data = self.__read_sanitized_data(file)
             self.__validate_selection(entry_index, sanitized_data)
@@ -39,6 +46,7 @@ class FileIoClient:
             self.__write_data(file, sanitized_data)
 
     def delete_entry(self, entry_index):
+        """This method deletes an entry that is stored in the file"""
         with open(self.filename, "r+", encoding="utf-8") as file:
             sanitized_data = self.__read_sanitized_data(file)
             self.__validate_selection(entry_index, sanitized_data)

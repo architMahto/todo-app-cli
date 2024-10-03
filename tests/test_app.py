@@ -18,6 +18,10 @@ class TestApp(unittest.TestCase):
           "show",
           "exit"
        ]) as mock_input,
+      mock.patch(
+            "src.clients.fileio.FileIoClient.get_data",
+            return_value=["Learn Golang", "Learn Rust", "Learn Python", "Learn C++"]
+      ),
        mock.patch("builtins.print") as mock_print
     ):
         app()

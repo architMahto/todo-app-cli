@@ -6,7 +6,8 @@ This app is a CRUD cli tool to manage todos. The todos are stored and managed in
 
 ### Programs, Databases, or Runtime Environments
 
-* `Poetry`
+* `poetry`
+* `poethepoet`
 
 ### Environment Variables
 
@@ -16,26 +17,26 @@ N/A
 
 ### Application
 
-1. `poetry run python main.py`
+1. `poe run_app`
 
 ### Tests, Linting and Formatting
 
 #### Without Coverage
 
-1. `poetry run pytest -v ./tests`
+1. `poe test`
 
 #### With Coverage
 
-1. `poetry run pytest -v --cov=src --cov-report term ./tests`
+1. `poe test_coverage`
 
 ##### With HTML
 
-1. `poetry run pytest -v --cov=src --cov-report html ./tests`
+1. `poe test_coverage_html`
 
 #### Linting
 
-1. `poetry run pylint src`
+1. `poe lint`
 
 #### Formatting
 
-1. `poetry run python -m black src`
+1. `poe format`

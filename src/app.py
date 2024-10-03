@@ -1,7 +1,6 @@
-"""This module exports a function to run the application"""
+"""This module contains a function to run the application"""
 
 from src.commands.commands import Command, parse_user_command, execute_user_command
-from src.commands.exceptions import UnknownCommandException
 
 
 def app():
