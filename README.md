@@ -19,19 +19,11 @@ N/A
 
 1. `poe run_app`
 
-### Tests, Linting and Formatting
+### Testing, Linting and Formatting
 
-#### Without Coverage
+#### Testing
 
 1. `poe test`
-
-#### With Coverage
-
-1. `poe test_coverage`
-
-##### With HTML
-
-1. `poe test_coverage_html`
 
 #### Linting
 
